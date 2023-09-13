@@ -15,5 +15,10 @@
 
 .cta-button-secondary {
   border-radius: 4px;
-    @apply p-3 font-poppins text-sm text-[#DB4444];
+  @apply p-3 font-poppins text-sm text-[#DB4444];
+}
+
+.container {
+  width: 100%;
+  height: 100%;
 }
