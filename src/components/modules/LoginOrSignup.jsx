@@ -1,3 +1,4 @@
+import Footer from '../common/Footer'
 import Header from '../common/Header'
 import TextInput from '../common/TextInput'
 import React, { Fragment, useState } from 'react'
