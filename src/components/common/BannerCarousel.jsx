@@ -7,19 +7,20 @@ const BannerCarousel = () => {
         <div className='relative'>
             <Carousel
                 additionalTransfrom={0}
-                arrows
+                arrows={false}
+                autoPlay={true}
                 autoPlaySpeed={3000}
                 centerMode={false}
                 className=""
                 containerClass="container"
                 dotListClass=""
                 draggable={false}
-                focusOnSelect={false}
+                focusOnSelect={false}   
                 infinite
                 itemClass=""
                 keyBoardControl
                 minimumTouchDrag={80}
-                pauseOnHover
+                pauseOnHover={false}
                 renderArrowsWhenDisabled={false}
                 renderButtonGroupOutside={false}
                 renderDotsOutside={false}
@@ -49,7 +50,7 @@ const BannerCarousel = () => {
                 rewind={false}
                 rewindWithAnimation={false}
                 rtl={false}
-                shouldResetAutoplay
+                shouldResetAutoplay={false}
                 showDots={false}
                 sliderClass=""
                 slidesToSlide={1}
