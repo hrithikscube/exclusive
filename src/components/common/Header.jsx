@@ -4,7 +4,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <div className='border-b border-gray-300 w-full mb-10'>
+        <div className='border-b border-gray-300 w-full'>
 
             <div className='text-center py-3 bg-black w-full flex items-center justify-center gap-2'>
                 <p className='text-sm font-poppins text-[#f2f2f2] font-regular'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
