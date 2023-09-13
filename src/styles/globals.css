@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 .font-poppins {
-    font-family: 'Poppins', sans-serif;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.cta-button-primary {
+  border-radius: 4px;
+  background: var(--Button2, #DB4444);
+  @apply p-3 text-white font-poppins text-sm;
+}
+
+.cta-button-secondary {
+  border-radius: 4px;
+    @apply p-3 font-poppins text-sm text-[#DB4444];
+}

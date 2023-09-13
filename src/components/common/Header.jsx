@@ -5,6 +5,13 @@ import React from 'react'
 const Header = () => {
     return (
         <div className='border-b border-gray-300 w-full mb-10'>
+
+            <div className='text-center py-3 bg-black w-full flex items-center justify-center gap-2'>
+                <p className='text-sm font-poppins text-[#f2f2f2] font-regular'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+
+                <span className='text-sm font-poppins text-[#f2f2f2] font-medium hover:underline cursor-pointer'>Shop Now</span>
+            </div>
+
             <div className='lg:w-[1290px] m-auto lg:p-10 p-5 flex flex-col lg:flex-row items-center justify-between '>
 
                 <h1 className='font-poppins font-semibold lg:text-2xl text-xl text-black'>Exclusive</h1>
