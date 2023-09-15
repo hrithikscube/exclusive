@@ -6,17 +6,17 @@ const Header = () => {
     return (
         <div className='border-b border-gray-300 w-full'>
 
-            <div className='text-center py-3 bg-black w-full flex items-center justify-center gap-2'>
+            <div className='text-center py-3 bg-black w-full flex lg:flex-row flex-col items-center justify-center gap-2'>
                 <p className='text-sm font-poppins text-[#f2f2f2] font-regular'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
 
                 <span className='text-sm font-poppins text-[#f2f2f2] font-medium hover:underline cursor-pointer'>Shop Now</span>
             </div>
 
-            <div className='lg:w-[1290px] m-auto lg:p-10 p-5 flex flex-col lg:flex-row items-center justify-between '>
+            <div className='lg:w-[1290px] m-auto lg:p-10 p-5 flex flex-col lg:flex-row lg:items-center lg:justify-between '>
 
                 <h1 className='font-poppins font-semibold lg:text-2xl text-xl text-black'>Exclusive</h1>
 
-                <div className='flex flex-col lg:flex-row items-center lg:gap-7 gap-4'>
+                <div className='flex flex-col lg:flex-row lg:items-center lg:gap-7 gap-4 lg:my-0 my-5'>
                     {React.Children.toArray([
                         "Home", "Contact", "About", "Sign Up"
                     ]
