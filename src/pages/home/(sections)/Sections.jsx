@@ -190,7 +190,7 @@ const Sections = () => {
                     </div>
                 </div>
 
-                <div className='my-5 lg:px-0 px-5'>
+                <div className='lg:my-20 my-10 lg:px-0 px-5'>
 
                     <div className='flex lg:flex-row flex-col items-start justify-center lg:gap-10 gap-5'>
 
