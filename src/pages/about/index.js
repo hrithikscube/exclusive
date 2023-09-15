@@ -1,9 +1,10 @@
+import About from '@/components/modules/About'
 import React from 'react'
 
-const About = () => {
+const index = () => {
   return (
-    <div>About</div>
+    <About />
   )
 }
 
-export default About
+export default index
