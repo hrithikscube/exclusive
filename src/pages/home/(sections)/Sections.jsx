@@ -145,6 +145,24 @@ const Sections = () => {
                     </div>
                 </div>
 
+                <div className='bg-black p-10 grid lg:grid-cols-2 items-center lg:my-10 my-5 lg:mx-0 mx-5'>
+
+                    <div className='flex flex-col gap-4 items-start'>
+
+                        <p className='text-radiantGreen text-base font-poppins font-medium'>Categories</p>
+
+                        <h1 className='lg:text-6xl text-white text-3xl font-poppins font-medium'>Enhance Your <br /> Music Experience</h1>
+
+                        <button className='bg-radiantGreen p-3 rounded-lg px-7 text-black font-poppins font-medium'>
+                            Buy Now!
+                        </button>
+
+                    </div>
+
+                    <img src="/images/jbl-boombox.png" alt="boombox" />
+
+                </div>
+
                 {/* Explore Our Products */}
                 <div className='my-5 lg:px-0 px-5'>
                     <SectionTitle title="Our Products" secondaryTitle="Explore Our Products" />

@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         'primaryRed': '#DB4444',
+        'radiantGreen':'#00ff66'
       }
     },
   },
