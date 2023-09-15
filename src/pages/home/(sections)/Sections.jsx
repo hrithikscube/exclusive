@@ -43,7 +43,50 @@ const categories = [
     "Healthy & Beauty",
 ]
 
-const HeroSection = () => {
+const productCategories = [
+    {
+        name: 'Phone',
+        image: '/categories/phone.svg',
+    },
+
+    {
+        name: 'Computers',
+        image: '/categories/computers.svg',
+    },
+
+    {
+        name: 'Camera',
+        image: '/categories/camera.svg',
+    },
+
+    {
+        name: 'Gaming',
+        image: '/categories/gaming.svg',
+    },
+
+    {
+        name: 'Headphones',
+        image: '/categories/headphones.svg',
+    },
+
+    {
+        name: 'Smartwatch',
+        image: '/categories/smartwatch.svg',
+    },
+
+
+]
+
+const CategoryCard = ({ data }) => {
+    return (
+        <div className='w-[200px] h-[200px] p-5 border border-[#2f2f2f] hover:border-none group hover:bg-primaryRed cursor-pointer rounded flex flex-col items-center gap-2 justify-center'>
+            <img src={data.image} alt="Phone" className="w-20 h-20 group-hover:invert" />
+            <h1 className='text-base font-poppins font-medium capitalize group-hover:text-white'>{data.name}</h1>
+        </div>
+    )
+}
+
+const Sections = () => {
     return (
         <Fragment>
 
@@ -67,7 +110,7 @@ const HeroSection = () => {
                 <div className='my-5'>
                     <SectionTitle title="Today's" secondaryTitle="Flash Sales" />
 
-                    <div className='grid grid-cols-4'>
+                    <div className='grid grid-cols-4 my-5'>
 
                         {React.Children.toArray([1, 1, 1, 1].map(item => (
                             <ProductCard />
@@ -80,16 +123,41 @@ const HeroSection = () => {
                 {/* Browse By Category */}
                 <div className='my-5'>
                     <SectionTitle title="Categories" secondaryTitle="Browse By Category" />
+
+                    <div className='my-5 grid lg:grid-cols-6 grid-cols-1'>
+                        {React.Children.toArray(productCategories.map(item => (
+                            <CategoryCard data={item} />
+                        )))}
+                    </div>
+
                 </div>
 
                 {/* Best Selling Products */}
                 <div className='my-5'>
                     <SectionTitle title="This Month" secondaryTitle="Best Selling Products" />
+
+                    <div className='grid grid-cols-4 my-5'>
+
+                        {React.Children.toArray([1, 1, 1, 1].map(item => (
+                            <ProductCard />
+                        )))}
+
+                    </div>
                 </div>
 
-                {/* Best Selling Products */}
+                {/* Explore Our Products */}
                 <div className='my-5'>
                     <SectionTitle title="Our Products" secondaryTitle="Explore Our Products" />
+
+                    <div className='grid grid-cols-4 my-5'>
+
+                        {React.Children.toArray([1, 1, 1, 1, 1, 1, 1, 1,].map(item => (
+                            <ProductCard />
+                        )))}
+
+                    </div>
+
+
                 </div>
 
                 {/* New Arrival */}
@@ -98,10 +166,12 @@ const HeroSection = () => {
                 </div>
 
 
+
+
             </div>
 
         </Fragment>
     )
 }
 
-export default HeroSection
+export default Sections

@@ -1,13 +1,13 @@
 import React from 'react'
 import Footer from '@/components/common/Footer'
 import Header from '@/components/common/Header'
-import HeroSection from './(sections)/HeroSection'
+import Sections from './(sections)/Sections'
 
 const Home = () => {
     return (
         <div>
             <Header />
-            <HeroSection />
+            <Sections />
             <Footer />
         </div>
     )
