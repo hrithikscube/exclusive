@@ -5,7 +5,7 @@ import React, { Fragment, useState } from 'react'
 
 const LoginOrSignup = () => {
 
-    const [isUser, setIsUser] = useState(true)
+    const [isUser, setIsUser] = useState(false)
 
     return (
         <Fragment>

@@ -1,5 +1,26 @@
+import Link from 'next/link'
 import React from 'react'
 
+
+const headerItems = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'Contact',
+        link: '/contact'
+    },
+    {
+        name: 'About',
+        link: '/about'
+    },
+    {
+        name: 'Sign Up',
+        link: '/login'
+    },
+
+]
 
 
 const Header = () => {
@@ -17,11 +38,11 @@ const Header = () => {
                 <h1 className='font-poppins font-semibold lg:text-2xl text-xl text-black'>Exclusive</h1>
 
                 <div className='flex flex-col lg:flex-row lg:items-center lg:gap-7 gap-4 lg:my-0 my-5'>
-                    {React.Children.toArray([
-                        "Home", "Contact", "About", "Sign Up"
-                    ]
+                    {React.Children.toArray(headerItems
                         .map(item => (
-                            <p className='text-base text-black hover:underline cursor-pointer font-poppins font-thin'>{item}</p>
+                            <Link href={item.link}>
+                                <p className='text-base text-black hover:underline cursor-pointer font-poppins font-thin'>{item.name}</p>
+                            </Link>
                         ))
                     )}
                 </div>
