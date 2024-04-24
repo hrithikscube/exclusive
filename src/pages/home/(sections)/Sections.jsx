@@ -1,214 +1,222 @@
 import BannerCarousel from '@/components/common/BannerCarousel'
 import SectionTitle from '@/components/common/SectionTitle'
+import Stats from '@/components/common/Stats'
 import { Rating } from '@mui/material'
 import React, { Fragment } from 'react'
 
 const ProductCard = () => {
-    return (
-        <div>
-            <div className='bg-[#f2f2f2] lg:w-[290px] w-full p-10 flex flex-col gap-4 items-center justify-center relative group'>
+  return (
+    <div>
+      <div className="bg-[#f2f2f2] lg:w-[290px] w-full p-10 flex flex-col gap-4 items-center justify-center relative group">
+        <img src="/products/joystick.png" alt="joystick" />
 
-                <img src="/products/joystick.png" alt="joystick" />
+        <button className="p-2 w-full bg-black absolute bottom-0 group-hover:block hidden text-white font-poppins text-sm font-medium capitalize">
+          Add to Cart
+        </button>
+      </div>
 
-                <button className='p-2 w-full bg-black absolute bottom-0 group-hover:block hidden text-white font-poppins text-sm font-medium capitalize'>
-                    Add to Cart
-                </button>
-
+      <div className="mt-1">
+        <p className="text-base font-poppins font-medium">Gaming Joystick</p>
+        <div className="flex items-center gap-1">
+          <p className="text-primaryRed text-sm font-poppins font-semibold">
+            $100
+          </p>
+          <span className="text-sm font-poppins flex items-center font-medium text-[#808080]">
+            <div className="scale-[0.9]">
+              <Rating name="read-only" value={4} readOnly />
             </div>
-
-            <div className='mt-1'>
-                <p className='text-base font-poppins font-medium'>Gaming Joystick</p>
-                <div className='flex items-center gap-1'>
-                    <p className='text-primaryRed text-sm font-poppins font-semibold'>$100</p>
-                    <span className='text-sm font-poppins flex items-center font-medium text-[#808080]'>
-                        <div className='scale-[0.9]'>
-                            <Rating name="read-only" value={4} readOnly />
-                        </div>
-                        (35)</span>
-                </div>
-            </div>
+            (35)
+          </span>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 const categories = [
-    "Woman's Fashion",
-    "Men's Fashion",
-    "Electronics",
-    "Home & Lifestyle",
-    "Medicine",
-    "Sports & Outdoor",
-    "Baby's & Toys",
-    "Grocery & Pets",
-    "Healthy & Beauty",
+  "Woman's Fashion",
+  "Men's Fashion",
+  'Electronics',
+  'Home & Lifestyle',
+  'Medicine',
+  'Sports & Outdoor',
+  "Baby's & Toys",
+  'Grocery & Pets',
+  'Healthy & Beauty',
 ]
 
 const productCategories = [
-    {
-        name: 'Phone',
-        image: '/categories/phone.svg',
-    },
+  {
+    name: 'Phone',
+    image: '/categories/phone.svg',
+  },
 
-    {
-        name: 'Computers',
-        image: '/categories/computers.svg',
-    },
+  {
+    name: 'Computers',
+    image: '/categories/computers.svg',
+  },
 
-    {
-        name: 'Camera',
-        image: '/categories/camera.svg',
-    },
+  {
+    name: 'Camera',
+    image: '/categories/camera.svg',
+  },
 
-    {
-        name: 'Gaming',
-        image: '/categories/gaming.svg',
-    },
+  {
+    name: 'Gaming',
+    image: '/categories/gaming.svg',
+  },
 
-    {
-        name: 'Headphones',
-        image: '/categories/headphones.svg',
-    },
+  {
+    name: 'Headphones',
+    image: '/categories/headphones.svg',
+  },
 
-    {
-        name: 'Smartwatch',
-        image: '/categories/smartwatch.svg',
-    },
-
-
+  {
+    name: 'Smartwatch',
+    image: '/categories/smartwatch.svg',
+  },
 ]
 
 const CategoryCard = ({ data }) => {
-    return (
-        <div className='lg:w-[200px] w-full lg:h-[200px] h-[250px] p-5 border border-[#2f2f2f] hover:border-none group hover:bg-primaryRed cursor-pointer rounded flex flex-col items-center gap-2 justify-center'>
-            <img src={data.image} alt="Phone" className="w-20 h-20 group-hover:invert" />
-            <h1 className='text-base font-poppins font-medium capitalize group-hover:text-white'>{data.name}</h1>
-        </div>
-    )
+  return (
+    <div className="lg:w-[200px] w-full lg:h-[200px] h-[250px] p-5 border border-[#2f2f2f] hover:border-none group hover:bg-primaryRed cursor-pointer rounded flex flex-col items-center gap-2 justify-center">
+      <img
+        src={data.image}
+        alt="Phone"
+        className="w-20 h-20 group-hover:invert"
+      />
+      <h1 className="text-base font-poppins font-medium capitalize group-hover:text-white">
+        {data.name}
+      </h1>
+    </div>
+  )
 }
 
 const Sections = () => {
-    return (
-        <Fragment>
+  return (
+    <Fragment>
+      <div className="lg:w-[1290px] m-auto">
+        {/* Hero Section Carousel & Side Menu */}
+        <div className=" flex flex-col lg:flex-row justify-between lg:my-10 my-5 lg:px-0 px-5">
+          <div className="flex flex-col items-start gap-4 text-start lg:w-3/12 w-full">
+            {React.Children.toArray(
+              categories.map((item) => (
+                <p className="text-base font-poppins font-medium ">{item}</p>
+              )),
+            )}
+          </div>
 
-            <div className='lg:w-[1290px] m-auto'>
-                {/* Hero Section Carousel & Side Menu */}
-                <div className=' flex flex-col lg:flex-row justify-between lg:my-10 my-5 lg:px-0 px-5'>
+          <div className="lg:w-9/12 w-full lg:my-0 my-5">
+            <BannerCarousel />
+          </div>
+        </div>
 
-                    <div className='flex flex-col items-start gap-4 text-start lg:w-3/12 w-full'>
-                        {React.Children.toArray(categories.map(item => (
-                            <p className='text-base font-poppins font-medium '>{item}</p>
-                        )))}
-                    </div>
+        {/* Flash Sales */}
+        <div className="my-5 lg:px-0 px-5">
+          <SectionTitle title="Today's" secondaryTitle="Flash Sales" />
 
-                    <div className='lg:w-9/12 w-full lg:my-0 my-5'>
-                        <BannerCarousel />
-                    </div>
+          <div className="grid lg:grid-cols-4 my-5 lg:gap-0 gap-5">
+            {React.Children.toArray(
+              [1, 1, 1, 1].map((item) => <ProductCard />),
+            )}
+          </div>
+        </div>
 
+        {/* Browse By Category */}
+        <div className="my-5 lg:px-0 px-5">
+          <SectionTitle
+            title="Categories"
+            secondaryTitle="Browse By Category"
+          />
+
+          <div className="my-5 grid lg:grid-cols-6 gap-5">
+            {React.Children.toArray(
+              productCategories.map((item) => <CategoryCard data={item} />),
+            )}
+          </div>
+        </div>
+
+        {/* Best Selling Products */}
+        <div className="my-5 lg:px-0 px-5">
+          <SectionTitle
+            title="This Month"
+            secondaryTitle="Best Selling Products"
+          />
+
+          <div className="grid lg:grid-cols-4 my-5 lg:gap-0 gap-5">
+            {React.Children.toArray(
+              [1, 1, 1, 1].map((item) => <ProductCard />),
+            )}
+          </div>
+        </div>
+
+        <div className="bg-black p-10 grid lg:grid-cols-2 items-center lg:my-10 my-5 lg:mx-0 mx-5">
+          <div className="flex flex-col gap-4 items-start">
+            <p className="text-radiantGreen text-base font-poppins font-medium">
+              Categories
+            </p>
+
+            <h1 className="lg:text-6xl text-white text-3xl font-poppins font-medium">
+              Enhance Your <br /> Music Experience
+            </h1>
+
+            <button className="bg-radiantGreen p-3 rounded-lg px-7 text-black font-poppins font-medium">
+              Buy Now!
+            </button>
+          </div>
+
+          <img src="/images/jbl-boombox.png" alt="boombox" />
+        </div>
+
+        {/* Explore Our Products */}
+        <div className="my-5 lg:px-0 px-5">
+          <SectionTitle
+            title="Our Products"
+            secondaryTitle="Explore Our Products"
+          />
+
+          <div className="grid lg:grid-cols-4 my-5 lg:gap-0 gap-5">
+            {React.Children.toArray(
+              [1, 1, 1, 1, 1, 1, 1, 1].map((item) => <ProductCard />),
+            )}
+          </div>
+        </div>
+
+        {/* New Arrival */}
+        <div className="my-5 lg:px-0 px-5">
+          <SectionTitle title="Featured" secondaryTitle="New Arrival" />
+
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 my-5">
+            <div className="bg-black">
+              <img
+                src="/products/ps5.png"
+                alt="products"
+                className="w-full object-contain h-full"
+              />
+            </div>
+
+            <div className="flex flex-col gap-5">
+              <div>
+                <img
+                  src="/products/women.png"
+                  alt=""
+                  className="w-full object-cover"
+                />
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                <div className="bg-black flex justify-center items-center p-5">
+                  <img src="/products/speakers.png" alt="" className="" />
                 </div>
-
-                {/* Flash Sales */}
-                <div className='my-5 lg:px-0 px-5'>
-                    <SectionTitle title="Today's" secondaryTitle="Flash Sales" />
-
-                    <div className='grid lg:grid-cols-4 my-5 lg:gap-0 gap-5'>
-
-                        {React.Children.toArray([1, 1, 1, 1].map(item => (
-                            <ProductCard />
-                        )))}
-
-                    </div>
-
+                <div className="bg-black flex justify-center items-center p-5">
+                  <img src="/products/gucci.png" alt="" className="" />
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                {/* Browse By Category */}
-                <div className='my-5 lg:px-0 px-5'>
-                    <SectionTitle title="Categories" secondaryTitle="Browse By Category" />
-
-                    <div className='my-5 grid lg:grid-cols-6 gap-5'>
-                        {React.Children.toArray(productCategories.map(item => (
-                            <CategoryCard data={item} />
-                        )))}
-                    </div>
-
-                </div>
-
-                {/* Best Selling Products */}
-                <div className='my-5 lg:px-0 px-5'>
-                    <SectionTitle title="This Month" secondaryTitle="Best Selling Products" />
-
-                    <div className='grid lg:grid-cols-4 my-5 lg:gap-0 gap-5'>
-
-                        {React.Children.toArray([1, 1, 1, 1].map(item => (
-                            <ProductCard />
-                        )))}
-
-                    </div>
-                </div>
-
-                <div className='bg-black p-10 grid lg:grid-cols-2 items-center lg:my-10 my-5 lg:mx-0 mx-5'>
-
-                    <div className='flex flex-col gap-4 items-start'>
-
-                        <p className='text-radiantGreen text-base font-poppins font-medium'>Categories</p>
-
-                        <h1 className='lg:text-6xl text-white text-3xl font-poppins font-medium'>Enhance Your <br /> Music Experience</h1>
-
-                        <button className='bg-radiantGreen p-3 rounded-lg px-7 text-black font-poppins font-medium'>
-                            Buy Now!
-                        </button>
-
-                    </div>
-
-                    <img src="/images/jbl-boombox.png" alt="boombox" />
-
-                </div>
-
-                {/* Explore Our Products */}
-                <div className='my-5 lg:px-0 px-5'>
-                    <SectionTitle title="Our Products" secondaryTitle="Explore Our Products" />
-
-                    <div className='grid lg:grid-cols-4 my-5 lg:gap-0 gap-5'>
-
-                        {React.Children.toArray([1, 1, 1, 1, 1, 1, 1, 1,].map(item => (
-                            <ProductCard />
-                        )))}
-
-                    </div>
-
-
-                </div>
-
-                {/* New Arrival */}
-                <div className='my-5 lg:px-0 px-5'>
-                    <SectionTitle title="Featured" secondaryTitle="New Arrival" />
-
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 my-5">
-
-                        <div className='bg-black'>
-                            <img src="/products/ps5.png" alt="products" className='w-full object-contain h-full' />
-                        </div>
-
-                        <div className='flex flex-col gap-5'>
-
-                            <div>
-                                <img src="/products/women.png" alt="" className='w-full object-cover' />
-                            </div>
-
-                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-                                <div className='bg-black flex justify-center items-center p-5'>
-                                    <img src="/products/speakers.png" alt="" className='' />
-                                </div>
-                                <div className='bg-black flex justify-center items-center p-5'>
-                                    <img src="/products/gucci.png" alt="" className='' />
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className='lg:my-20 my-10 lg:px-0 px-5'>
+        {/* <div className='lg:my-20 my-10 lg:px-0 px-5'>
 
                     <div className='flex lg:flex-row flex-col items-start justify-center lg:gap-10 gap-5'>
 
@@ -232,12 +240,11 @@ const Sections = () => {
 
                     </div>
 
-                </div>
-
-            </div>
-
-        </Fragment>
-    )
+                </div> */}
+        <Stats />
+      </div>
+    </Fragment>
+  )
 }
 
 export default Sections

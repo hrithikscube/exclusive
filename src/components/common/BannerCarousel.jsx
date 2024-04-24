@@ -58,7 +58,7 @@ const BannerCarousel = () => {
             >
 
                 {React.Children.toArray([1, 1, 1, 1, 1].map(item => (
-                    <img src="/images/iphonebanner.png" alt="iphonebanne" />
+                    <img src="/images/iphonebanner.png" alt="iphonebanne" className='' />
                 )))}
 
             </Carousel>
